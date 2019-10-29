@@ -1,32 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app>
+        <v-toolbar max-height=64>
+            <v-toolbar-title class="headline text-uppercase">
+                <span>Batted Ball Data</span>
+            </v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <v-toolbar-items>
+                <v-btn text to="/table">Table</v-btn>
+                <v-btn text to="/batters">Batters</v-btn>
+                <v-btn text to="/pitchers">Pitchers</v-btn>
+                <v-btn text to="/plot">Plot</v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
+
+        <v-content>
+            <router-view></router-view>
+        </v-content>
+    </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    export default {
+        name: 'App',
+    };
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+<style>
+.v-content {
+    margin: 2em;
 }
 </style>
